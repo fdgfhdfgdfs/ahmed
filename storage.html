@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>„Œ“‰ »Ì«‰«  «·„” Œœ„Ì‰</title>
+</head>
+<body>
+    <div class="form-container">
+        <h2>„Œ“‰ »Ì«‰«  «·„” Œœ„Ì‰</h2>
+        <table id="userTable" border="1">
+            <thead>
+                <tr>
+                    <th>«·»—Ìœ «·≈·ﬂ —Ê‰Ì</th>
+                    <th>ﬂ·„… «·„—Ê—</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ”Ì „ ≈œŒ«· «·»Ì«‰«  Â‰« »Ê«”ÿ… JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // «” —Ã«⁄ «·»Ì«‰«  „‰ LocalStorage
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const userTableBody = document.getElementById('userTable').getElementsByTagName('tbody')[0];
+
+        // ⁄—÷ «·»Ì«‰«  ›Ì «·ÃœÊ·
+        users.forEach(user => {
+            const row = userTableBody.insertRow();
+            const emailCell = row.insertCell(0);
+            const passwordCell = row.insertCell(1);
+
+            emailCell.textContent = user.email;
+            passwordCell.textContent = user.password;
+        });
+    </script>
+</body>
+</html>
